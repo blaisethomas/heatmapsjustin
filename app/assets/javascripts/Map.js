@@ -18,7 +18,7 @@ var map,
   colorLow = [ 96, 112, 200 ];
 
 // Get rent and crime from the our DB JSON endpoint
-myData = httpGet( "http://limitless-cliffs-3918.herokuapp.com/neighborhoods.json" );
+myData = httpGet( "http://localhost:3000/neighborhoods.json" );
 myData = JSON.parse( myData );
 //console.log(myData);
 
@@ -58,9 +58,9 @@ minCrime = Math.min.apply( null, allCrime );
 // Set up the map
 function initialize() {
   map = new google.maps.Map( document.getElementById( "map-canvas" ) );
-  var mapCenter = new google.maps.LatLng( myData[ 0 ].Latitude, myData[ 0 ].Longitude );
+  var mapCenter = new google.maps.LatLng( 34.0421431, -118.2426416 );
   var mapOptions = {
-    zoom: 12,
+    zoom: 10,
     scrollwheel: false,
     center: mapCenter,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
